@@ -16,20 +16,25 @@ function success(position) {
 
 	var imgMap = new Image();
 
-	console.log(latitude + "," + longitude);
+	LatLong = latitude + "," + longitude;
 	
 	imgMap.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+	weatherRequest(APIKey, LatLong);
 };
 
  navigator.geolocation.getCurrentPosition(success);
 
-
 //Forecast.io API access
 var APIKey = "8fe624851e185eeb5c3007d021c41605"
-var LatLong = "45.532814,-122.689296" //Potentially create user input.
 
-var url = "https://api.forecast.io/forecast/" + APIKey + '/' + LatLong;
+function weatherRequest(api, latlong) {
+	var url = "https://api.forecast.io/forecast/" + api + '/' + latlong;
 
+	$.getJSON(url + "?callback=?", null, function(weatherData) {
+  		app.models.currentWeather.set (weatherData); //AJAX request (JSONP to get around the same origin policy which JQUERY is wrapping for us)
+	});
+};
 
 //Backbone Models
 app.models.currentWeather = new WeatherModel();
@@ -41,8 +46,6 @@ app.views.forecast = new ForecastView({model: app.models.currentWeather});
 
 window.app = app;
 
-$.getJSON(url + "?callback=?", null, function(weatherData) {
-  app.models.currentWeather.set (weatherData); //AJAX request (JSONP to get around the same origin policy which JQUERY is wrapping for us)
-});
+
 
 });
