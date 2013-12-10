@@ -9,13 +9,32 @@ var app = {};
 app.views = {};
 app.models = {};
 
+//Geolocation
+function success(position) {
+	var latitude  = ((Math.floor(10E5 * (position.coords.latitude)))/10E5);
+	var longitude = ((Math.floor(10E5 * (position.coords.longitude)))/10E5);
+
+	var imgMap = new Image();
+
+	console.log(latitude + "," + longitude);
+	
+	imgMap.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+};
+
+ navigator.geolocation.getCurrentPosition(success);
+
+
+//Forecast.io API access
 var APIKey = "8fe624851e185eeb5c3007d021c41605"
 var LatLong = "45.532814,-122.689296" //Potentially create user input.
 
 var url = "https://api.forecast.io/forecast/" + APIKey + '/' + LatLong;
 
+
+//Backbone Models
 app.models.currentWeather = new WeatherModel();
 
+//Backbone Views
 app.views.summary = new SummaryView({model: app.models.currentWeather});
 app.views.details = new DetailView({model: app.models.currentWeather});
 app.views.forecast = new ForecastView({model: app.models.currentWeather});
