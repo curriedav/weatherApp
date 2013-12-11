@@ -44,8 +44,7 @@ app.views.summary = new SummaryView({model: app.models.currentWeather});
 app.views.details = new DetailView({model: app.models.currentWeather});
 app.views.forecast = new ForecastView({model: app.models.currentWeather});
 
+//Console access to app
 window.app = app;
-
-
 
 });
