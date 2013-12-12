@@ -13,7 +13,7 @@ app.models = {};
 function success(position) {
 	var latitude  = ((Math.floor(10E5 * (position.coords.latitude)))/10E5);
 	var longitude = ((Math.floor(10E5 * (position.coords.longitude)))/10E5);
-
+	
 	var imgMap = new Image();
 
 	LatLong = latitude + "," + longitude;
@@ -46,5 +46,24 @@ app.views.forecast = new ForecastView({model: app.models.currentWeather});
 
 //Console access to app
 window.app = app;
+
+//Setting Days
+function getWeekDays () {
+	var today = new Date().getDay();
+	var weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+	var currentWeekDays = [];
+
+	for (var i = today; i <= 6; i++) {
+		currentWeekDays.push(weekDays[i]);
+	};
+
+	if (today !== 0) {
+		for (var i = 0; i < today; i++) {
+			currentWeekDays.push(weekDays[i]);
+		};
+	}
+
+	return currentWeekDays;
+};
 
 });
