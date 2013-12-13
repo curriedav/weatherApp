@@ -64,8 +64,8 @@ var ForecastView = Backbone.View.extend({
 				temperatureMin: Math.floor(daily.data[i].temperatureMin),
 				precipProbability: Math.floor(daily.data[i].precipProbability * 100),
 				precipType: daily.data[i].precipType,
-				sunriseTime: new Date(daily.data[i].sunriseTime * 1000).toTimeString(),
-				sunsetTime: new Date(daily.data[i].sunsetTime * 1000).toTimeString(),
+				sunriseTime: new Date(daily.data[i].sunriseTime * 1000).toLocaleTimeString("en-us"),
+				sunsetTime: new Date(daily.data[i].sunsetTime * 1000).toLocaleTimeString("en-us"),
 				weekDay: weekDays[new Date(daily.data[i].time * 1000).getDay()]		
 			}
 		};
