@@ -9,7 +9,9 @@ var SummaryView = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html(this.template(this.model.get('currently')));
+    if (this.model.get('currently')) {
+        this.$el.html(this.template(this.model.get('currently')));
+    };
     return this;
   }
 });

@@ -1,7 +1,10 @@
+{{#each forecastDay}}
 <div>
-	<h2>{{context.weekDays.0}}</h2>
-	<h3>{{context.daily.data.0.summary}}</h3>
-	<h3>High: {{context.daily.data.0.temperatureMax}}</h3>
-	<h3>Low: {{context.daily.data.0.temperatureMin}}</h3>
-	<h3>Chance of {{context.daily.data.0.precipType}}: {{context.daily.data.0.precipProbability}}</h3>
+	<h2>{{weekDay}}</h2>
+	<h3>{{summary}}</h3>
+	<p>High: {{temperatureMax}} F</p>
+	<p>Low: {{temperatureMin}} F</p>
+	<p>Chance of {{precipType}}: {{precipProbability}}%</p>
+	<br>
 </div>
+{{/each}}
