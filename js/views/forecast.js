@@ -42,13 +42,14 @@ var ForecastView = Backbone.View.extend({
 		var arr = context.forecastDay;
 
 		for (var i = 0; i <= 6; i++) {
-			arr[i] = {	weekDay: weekDays[i],
-						summary: daily.data[i].summary,
-						temperatureMax: Math.floor(daily.data[i].temperatureMax),
-						temperatureMin: Math.floor(daily.data[i].temperatureMin),
-						precipProbability: Math.floor(daily.data[i].precipProbability * 100),
-						precipType: daily.data[i].precipType
-					}
+			arr[i] = {	
+				weekDay: weekDays[i],
+				summary: daily.data[i].summary,
+				temperatureMax: Math.floor(daily.data[i].temperatureMax),
+				temperatureMin: Math.floor(daily.data[i].temperatureMin),
+				precipProbability: Math.floor(daily.data[i].precipProbability * 100),
+				precipType: daily.data[i].precipType		
+			}
 		};
 
 		return context;

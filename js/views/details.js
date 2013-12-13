@@ -9,11 +9,31 @@ var DetailView = Backbone.View.extend({
   	},
 
   	render: function () {
+
       if (this.model.get('currently')) {
-        this.$el.html(this.template(this.model.get('currently')));
+        var context = this.buildContext();
+        this.$el.html(this.template(context));
       };
+
     	return this;
-  	}
+  	},
+
+    buildContext: function () {
+      var curr = this.model.get('currently');
+      var context = {
+        apparentTemperature: Math.floor(curr.apparentTemperature),
+        dewPoint: Math.floor(curr.dewPoint),
+        humidity: Math.floor(curr.humidity),
+        ozone: Math.floor(curr.ozone),
+        precipProbability: Math.floor(curr.precipProbability) * 100,
+        temperature: Math.floor(curr.temperature),
+        visibility: Math.floor(curr.visibility),
+        windSpeed: Math.floor(curr.windSpeed)
+      };
+    
+    return context;
+    }
+
 });
 
 module.exports = DetailView;
