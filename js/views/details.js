@@ -21,6 +21,7 @@ var DetailView = Backbone.View.extend({
     buildContext: function () {
       var curr = this.model.get('currently');
       var context = {
+        summary: curr.summary,
         apparentTemperature: Math.floor(curr.apparentTemperature),
         dewPoint: Math.floor(curr.dewPoint),
         humidity: Math.floor(curr.humidity),

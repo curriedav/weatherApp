@@ -1,10 +1,28 @@
 {{#each forecastDay}}
-<div>
-	<h2>{{weekDay}}</h2>
-	<h3>{{summary}}</h3>
-	<p>High: {{temperatureMax}} F</p>
-	<p>Low: {{temperatureMin}} F</p>
-	<p>Chance of {{precipType}}: {{precipProbability}}%</p>
-	<br>
-</div>
+
+<h3><em>{{weekDay}}</em></h3>
+<p>{{summary}}</p>
+
+<table class= "table table-condensed">
+	<tbody>
+		<tr>
+			<td>High</td> <td>{{temperatureMax}} F</td>
+		</tr>
+		<tr>
+			<td>Low</td> <td>{{temperatureMin}} F</td>
+		</tr>
+		<tr>
+			<td>Chance of {{precipType}}</td> <td>{{precipProbability}}%</td>
+		</tr>
+		<tr>
+			<td>Sunrise Time</td> <td>{{sunriseTime}}</td>
+		</tr>
+		<tr>
+			<td>Sunset Time</td> <td>{{sunsetTime}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<br>
+
 {{/each}}
