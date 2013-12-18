@@ -10,7 +10,6 @@ var ForecastView = Backbone.View.extend({
 
 		if (this.model.get('daily')) { 
   			context = this.buildContext();
-  			console.log(context);
   			this.$el.html(this.template(context));
   		}
   		

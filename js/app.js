@@ -16,14 +16,18 @@ function success(position) {
 	
 	var imgMap = new Image();
 
-	LatLong = latitude + "," + longitude;
+	latLong = latitude + "," + longitude;
 	
 	imgMap.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
 
-	weatherRequest(APIKey, LatLong);
+	weatherRequest(APIKey, latLong);
 };
 
  navigator.geolocation.getCurrentPosition(success);
+
+
+//Google Geocoding
+
 
 //Forecast.io API access
 var APIKey = "8fe624851e185eeb5c3007d021c41605"
