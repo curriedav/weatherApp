@@ -1,54 +1,47 @@
-$(function () { // wait for on-ready
+$(function () { //Wait for on-ready
 
-var SummaryView = require('./views/summary');
-var DetailView = require('./views/details');
-var ForecastView= require('./views/forecast');
-var WeatherModel = require('./models/weather');
+	//Load Backbone app modules
+	var MainView = require('./views/main');
+  	var WeatherModel = require('./models/weather');
 
-var app = {};
-app.views = {};
-app.models = {};
+  	//App object
+  	var app = {
+  		views: {},
+  		models: {}
+  	};
 
-//Geolocation
-function success(position) {
-	var latitude  = ((Math.floor(10E5 * (position.coords.latitude)))/10E5);
-	var longitude = ((Math.floor(10E5 * (position.coords.longitude)))/10E5);
-	
-	var imgMap = new Image();
+  	//Console access to app
+  	window.app = app;
 
-	latLong = latitude + "," + longitude;
-	
-	imgMap.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+	//Geolocation
+	navigator.geolocation.getCurrentPosition(function (position) {
+        var latitude  = ((Math.floor(10E5 * (position.coords.latitude)))/10E5);
+        var longitude = ((Math.floor(10E5 * (position.coords.longitude)))/10E5);
+        
+        // var imgMap = new Image();
 
-	weatherRequest(APIKey, latLong);
-};
+        LatLong = latitude + "," + longitude;
+        
+        // imgMap.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
 
- navigator.geolocation.getCurrentPosition(success);
-
-
-//Google Geocoding
-
-
-//Forecast.io API access
-var APIKey = "8fe624851e185eeb5c3007d021c41605"
-
-function weatherRequest(api, latlong) {
-	var url = "https://api.forecast.io/forecast/" + api + '/' + latlong;
-
-	$.getJSON(url + "?callback=?", null, function(weatherData) {
-  		app.models.currentWeather.set (weatherData); //AJAX request (JSONP to get around the same origin policy which JQUERY is wrapping for us)
+        weatherRequest(apiKey, LatLong);
 	});
-};
 
-//Backbone Models
-app.models.currentWeather = new WeatherModel();
+	//Google reverse geocoding(forthcoming)
 
-//Backbone Views
-app.views.summary = new SummaryView({model: app.models.currentWeather});
-app.views.details = new DetailView({model: app.models.currentWeather});
-app.views.forecast = new ForecastView({model: app.models.currentWeather});
+	//Forecast.io API access
+	var apiKey = "8fe624851e185eeb5c3007d021c41605";
 
-//Console access to app
-window.app = app;
+	function weatherRequest(api, latlong) {
+        var url = "https://api.forecast.io/forecast/" + api + '/' + latlong;
 
+        $.getJSON(url + "?callback=?", null, function(weatherData) {
+                  app.models.currentWeather.set(weatherData);
+        });
+	};
+
+
+	//Instantiate Backbone Framework
+  	app.models.currentWeather = new WeatherModel();
+  	app.views.main = new MainView({model: app.models.currentWeather});
 });

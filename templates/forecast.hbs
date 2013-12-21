@@ -1,4 +1,4 @@
-{{#each forecastDay}}
+{{#each sevenDayForecast}}
 <br>
 
 <h3><em>{{weekDay}}</em></h3>
@@ -8,19 +8,19 @@
 <table class= "table table-condensed table-hover table-responsive">
 	<tbody>
 		<tr>
-			<td>High</td> <td>{{temperatureMax}} F</td>
+			<td>High</td> <td>{{maxTemp}} F</td>
 		</tr>
 		<tr>
-			<td>Low</td> <td>{{temperatureMin}} F</td>
+			<td>Low</td> <td>{{minTemp}} F</td>
 		</tr>
 		<tr>
-			<td>Chance of {{precipType}}</td> <td>{{precipProbability}}%</td>
+			<td>Chance of {{precipType}}</td> <td>{{precipProb}}%</td>
 		</tr>
 		<tr>
-			<td>Sunrise Time</td> <td>{{sunriseTime}}</td>
+			<td>Sunrise Time</td> <td>{{sunrise}}</td>
 		</tr>
 		<tr>
-			<td>Sunset Time</td> <td>{{sunsetTime}}</td>
+			<td>Sunset Time</td> <td>{{sunset}}</td>
 		</tr>
 	</tbody>
 </table>

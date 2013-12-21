@@ -1,7 +1,7 @@
 var SummaryView = Backbone.View.extend({
-  el: '#current', // every Backbone view has an associated DOM element
+  el: '#current', 
 
-  template: require('../../templates/summary.hbs'), //HBS is not javascript, it is actually a template file using a templating language called handlebars.
+  template: require('../../templates/summary.hbs'),
 
   initialize: function () {
     this.listenTo(this.model, 'change', this.render);
@@ -9,9 +9,9 @@ var SummaryView = Backbone.View.extend({
   },
 
   render: function () {
-    if (this.model.get('currently')) {
+      if (this.model.get('currently')) {
         this.$el.html(this.template(this.model.get('currently')));
-    };
+      }
     return this;
   }
 });
