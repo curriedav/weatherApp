@@ -8,6 +8,7 @@ var MainView = Backbone.View.extend({
   template: require('../../templates/main.hbs'),
 
   initialize: function () {
+    this.listenTo(this.model, 'change', this.render);
     this.render();
     this.model.fetch();
   },

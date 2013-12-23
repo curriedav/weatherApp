@@ -39,7 +39,7 @@ var ForecastView = Backbone.View.extend({
 	      		minTemp: day.temperatureMin,
 	      		summary: day.summary,
 	      		precipType: day.precipType,
-	      		precipProb: day.precipProbability,
+	      		precipProb: (day.precipProbability * 100),
       		};
 
       		context.sevenDayForecast.push(contextData);
