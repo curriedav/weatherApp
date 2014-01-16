@@ -654,51 +654,34 @@ exports.isEmpty = isEmpty;
 var templater = require("/Users/curriedav/git/weatherApp/node_modules/browserify-handlebars/node_modules/handlebars/dist/cjs/handlebars.runtime").default.template;module.exports = templater(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n  <div class=\"modal fade\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n        <h4 class=\"modal-title\">Modal title</h4>\n      </div>\n      <div class=\"modal-body\">\n          <h1>";
-  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.title); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</h1>\n  		  <p>";
-  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.description); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</p>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n      </div>\n    </div><!-- /.modal-content -->\n  </div><!-- /.modal-dialog -->\n</div><!-- /.modal -->\n\n";
-  return buffer;
-  }
 
-  buffer += "<h3><em>";
+  buffer += "<h3>";
   if (stack1 = helpers.summary) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.summary); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</em></h3>\n\n<div class=\"well\">\n<table class= \"table table-condensed table-hover table-responsive\">\n	<tbody>\n		<tr>\n			<td>Temperature</td> <td>";
+    + "</h3>\n\n<div class=\"well\">\n	<table class= \"table table-condensed table-hover table-responsive\">\n		<tbody>\n			<tr>\n				<td>Temperature</td> <td>";
   if (stack1 = helpers.temperature) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.temperature); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + "&deg; F</td>\n		</tr>\n		<tr>\n			<td>Apparent Temperature</td> <td>";
+    + "&deg; F</td>\n			</tr>\n			<tr>\n				<td>Apparent Temperature</td> <td>";
   if (stack1 = helpers.apparentTemperature) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.apparentTemperature); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + "&deg; F</td>\n		</tr>\n		<tr>\n			<td>Chance of Precipitation</td> <td>";
+    + "&deg; F</td>\n			</tr>\n			<tr>\n				<td>Chance of Precipitation</td> <td>";
   if (stack1 = helpers.precipProbability) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.precipProbability); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + "%</td>\n		</tr>\n		<tr>\n			<td>Humidity</td> <td>";
+    + "%</td>\n			</tr>\n			<tr>\n				<td>Humidity</td> <td>";
   if (stack1 = helpers.humidity) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.humidity); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + " %</td>\n		</tr>\n		<tr>\n			<td>Wind Speed</td> <td>";
+    + " %</td>\n			</tr>\n			<tr>\n				<td>Wind Speed</td> <td>";
   if (stack1 = helpers.windSpeed) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.windSpeed); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + " mph</td>\n		</tr>\n	</tbody>\n</table>\n</div>\n\n";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.alerts), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
+    + " mph</td>\n			</tr>\n		</tbody>\n	</table>\n</div>\n\n\n";
   return buffer;
   });
 },{"/Users/curriedav/git/weatherApp/node_modules/browserify-handlebars/node_modules/handlebars/dist/cjs/handlebars.runtime":6}],13:[function(require,module,exports){
@@ -714,7 +697,7 @@ function program1(depth0,data) {
   if (stack1 = helpers.dateId) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.dateId); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\">\n					<h3><em>";
+    + "\">\n					<h3>";
   if (stack1 = helpers.weekDay) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.weekDay); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
@@ -722,7 +705,7 @@ function program1(depth0,data) {
   if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.date); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + ")</em></h3>\n				</a>\n			</h4>\n		</div>\n		\n		<div id=\"";
+    + ")</h3>\n				</a>\n			</h4>\n		</div>\n		\n		<div id=\"";
   if (stack1 = helpers.dateId) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.dateId); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
@@ -762,22 +745,55 @@ function program1(depth0,data) {
 var templater = require("/Users/curriedav/git/weatherApp/node_modules/browserify-handlebars/node_modules/handlebars/dist/cjs/handlebars.runtime").default.template;module.exports = templater(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n\n  <div class=\"modal fade\">\n  	<div class=\"modal-dialog\">\n    	<div class=\"modal-content\">\n      		<div class=\"modal-header\">\n        		<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n        		<h4 class=\"modal-title\">Modal title</h4>\n      		</div>\n      		<div class=\"modal-body\">\n          		<h1>";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.title); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n  		  		<p>";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.description); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n      		</div>\n      		<div class=\"modal-footer\">\n        		<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n        		<button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n      		</div>\n    	</div><!-- /.modal-content -->\n  	</div><!-- /.modal-dialog -->\n</div><!-- /.modal -->\n\n";
+  return buffer;
+  }
 
-  buffer += "\n<h3><em>";
+  buffer += "\n<h3>";
   if (stack1 = helpers.summary) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.summary); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</em></h3>\n<div class=\"well\">\n<table class= \"table table-condensed table-hover table-responsive\">\n	<tbody>\n		<tr>\n			<td>Temperature</td> <td>";
+    + " ";
   if (stack1 = helpers.temperature) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.temperature); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + "&deg; F</td>\n		</tr>\n		<tr>\n			<td>Chance of Precipitation</td> <td>";
+    + "&deg;F</h3>\n\n<div class=\"panel-group\" id=\"accordion\">\n	<div class=\"panel panel-default\">\n	    <div class=\"panel-heading\">\n	      	<h4 class=\"panel-title\">\n		        <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseDetails\">\n		          Details\n		        </a>\n	      	</h4>\n	    </div>\n	    <div id=\"collapseDetails\" class=\"panel-collapse collapse\">\n	      <div class=\"panel-body\">\n	        <div class=\"well\">\n				<table class= \"table table-condensed table-hover table-responsive\">\n					<tbody>\n						<tr>\n							<td>Temperature</td> <td>";
+  if (stack1 = helpers.temperature) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.temperature); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "&deg; F</td>\n						</tr>\n						<tr>\n							<td>Apparent Temperature</td> <td>";
+  if (stack1 = helpers.apparentTemperature) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.apparentTemperature); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "&deg; F</td>\n						</tr>\n						<tr>\n							<td>Chance of Precipitation</td> <td>";
   if (stack1 = helpers.precipProbability) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.precipProbability); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + "%</td>\n		</tr>\n	</tbody>\n</table>\n</div>\n\n\n";
+    + "%</td>\n						</tr>\n						<tr>\n							<td>Humidity</td> <td>";
+  if (stack1 = helpers.humidity) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.humidity); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " %</td>\n						</tr>\n						<tr>\n							<td>Wind Speed</td> <td>";
+  if (stack1 = helpers.windSpeed) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.windSpeed); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " mph</td>\n						</tr>\n					</tbody>\n				</table>\n			</div>\n	      </div>\n		</div>\n  	</div>\n</div>\n\n\n";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.alerts), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n\n\n";
   return buffer;
   });
 },{"/Users/curriedav/git/weatherApp/node_modules/browserify-handlebars/node_modules/handlebars/dist/cjs/handlebars.runtime":6}]},{},[1])
