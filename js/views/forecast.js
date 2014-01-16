@@ -22,7 +22,7 @@ var ForecastView = Backbone.View.extend({
 		};
 		
 		var daily = this.model.get('daily') || { data:[] };
-		
+
 		var weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
 		daily.data.forEach(function (day) {
@@ -38,8 +38,8 @@ var ForecastView = Backbone.View.extend({
 	      		maxTemp: day.temperatureMax,
 	      		minTemp: day.temperatureMin,
 	      		summary: day.summary,
-	      		precipType: day.precipType,
-	      		precipProb: (day.precipProbability * 100),
+	      		precipProb: Math.floor(day.precipProbability * 100),
+	      		dateId: timestamp.getDate(),
       		};
 
       		context.sevenDayForecast.push(contextData);

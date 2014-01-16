@@ -1,30 +1,42 @@
 {{#each sevenDayForecast}}
-<br>
 
-<h3><em>{{weekDay}}</em></h3>
-<div class="well">
-<p>{{summary}}</p>
+<div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" href="#{{dateId}}">
+					<h3><em>{{weekDay}} ({{date}})</em></h3>
+				</a>
+			</h4>
+		</div>
+		
+		<div id="{{dateId}}" class="panel-collapse collapse">
+			<div class="well">
+				<p>{{summary}}</p>
 
-<table class= "table table-condensed table-hover table-responsive">
-	<tbody>
-		<tr>
-			<td>High</td> <td>{{maxTemp}}&deg; F</td>
-		</tr>
-		<tr>
-			<td>Low</td> <td>{{minTemp}}&deg; F</td>
-		</tr>
-		<tr>
-			<td>Chance of {{precipType}}</td> <td>{{precipProb}}%</td>
-		</tr>
-		<tr>
-			<td>Sunrise Time</td> <td>{{sunrise}}</td>
-		</tr>
-		<tr>
-			<td>Sunset Time</td> <td>{{sunset}}</td>
-		</tr>
-	</tbody>
-</table>
+				<table class= "table table-condensed table-hover table-responsive">
+					
+					<tbody>
+						<tr>
+							<td>High</td> <td>{{maxTemp}}&deg; F</td>
+						</tr>
+						<tr>
+							<td>Low</td> <td>{{minTemp}}&deg; F</td>
+						</tr>
+						<tr>
+							<td>Chance of Precipitation</td> <td>{{precipProb}}%</td>
+						</tr>
+						<tr>
+							<td>Sunrise Time</td> <td>{{sunrise}}</td>
+						</tr>
+						<tr>
+							<td>Sunset Time</td> <td>{{sunset}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </div>
-
 
 {{/each}}

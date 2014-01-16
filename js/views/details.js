@@ -24,7 +24,6 @@ var DetailView = Backbone.View.extend({
       dewPoint: Math.floor(curr.dewPoint),
       humidity: curr.humidity * 100,
       ozone: Math.floor(curr.ozone),
-      precipType: this.model.get('daily').data[0].precipType,
       precipProbability: curr.precipProbability * 100,
       temperature: Math.floor(curr.temperature),
       visibility: Math.floor(curr.visibility),
